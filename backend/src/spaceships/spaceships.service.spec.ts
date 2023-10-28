@@ -41,6 +41,21 @@ describe('SpaceshipsService', () => {
     expect(spaceships.length).toEqual(amountOfMockedSpaceships);
   });
 
+  it('should find spaceships with pagination', async () => {
+    const page = 2;
+    const pageSize = 10;
+
+    const spaceships = await service.findWithPagination(page, pageSize);
+
+    const expectedStartId = (page - 1) * pageSize + 1;
+
+    expect(spaceships).toHaveLength(pageSize);
+
+    spaceships.forEach((spaceship, index) => {
+      expect(spaceship.id).toEqual(expectedStartId + index);
+    });
+  });
+
   it('should find a spaceship by ID', async () => {
     const id = 5;
     const spaceship = await service.findOne(id);

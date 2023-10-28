@@ -16,10 +16,22 @@ class MockSpaceshipsService {
       id: amountOfMockedSpaceships + 1,
     };
 
-    return newSpaceship;
+    return Promise.resolve(newSpaceship);
   });
+
   findAll = jest.fn(() => mockSpaceships);
-  findOne = jest.fn((id: number) => mockSpaceships.find((el) => el.id === id));
+
+  findWithPagination = jest.fn((page: number, pageSize: number) => {
+    const offset = (page - 1) * pageSize;
+    const limit = pageSize;
+    return Promise.resolve(mockSpaceships.slice(offset, offset + limit));
+  });
+
+  findOne = jest.fn(
+    (id: number) =>
+      Promise.resolve(mockSpaceships.find((el) => el.id === id)) ?? null,
+  );
+
   update = jest.fn((id: number, updateSpaceshipInput: UpdateSpaceshipInput) => {
     const index = mockSpaceships.findIndex((el) => el.id === id);
 
@@ -32,8 +44,9 @@ class MockSpaceshipsService {
       ...updateSpaceshipInput,
     };
 
-    return updatedSpaceship;
+    return Promise.resolve(updatedSpaceship);
   });
+
   remove = jest.fn((id: number) => {
     const index = mockSpaceships.findIndex((el) => el.id === id);
 
@@ -41,7 +54,7 @@ class MockSpaceshipsService {
       throw new NotFoundException(`Spaceship with id ${id} not found`);
     }
 
-    return mockSpaceships[index];
+    return Promise.resolve(mockSpaceships[index]);
   });
 }
 

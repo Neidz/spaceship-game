@@ -14,7 +14,7 @@ type Spaceship {
 }
 
 type Query {
-  spaceships: [Spaceship!]!
+  spaceships(page: Int, pageSize: Int): [Spaceship!]!
   spaceship(id: Int!): Spaceship!
 }
 

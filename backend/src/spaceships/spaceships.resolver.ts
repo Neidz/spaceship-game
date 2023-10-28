@@ -3,6 +3,7 @@ import { SpaceshipsService } from './spaceships.service';
 import { Spaceship } from './entities/spaceship.entity';
 import { CreateSpaceshipInput } from './dto/create-spaceship.input';
 import { UpdateSpaceshipInput } from './dto/update-spaceship.input';
+import { BadRequestException } from '@nestjs/common';
 
 @Resolver(() => Spaceship)
 export class SpaceshipsResolver {
@@ -16,8 +17,26 @@ export class SpaceshipsResolver {
   }
 
   @Query(() => [Spaceship], { name: 'spaceships' })
-  findAll() {
-    return this.spaceshipsService.findAll();
+  findSpaceships(
+    @Args('page', { type: () => Int, nullable: true }) page?: number,
+    @Args('pageSize', { type: () => Int, nullable: true }) pageSize?: number,
+  ) {
+    if (
+      (page === undefined && pageSize !== undefined) ||
+      (page !== undefined && pageSize === undefined)
+    ) {
+      throw new BadRequestException(
+        'Both page and pageSize must be provided for pagination.',
+      );
+    } else if (page < 1 || pageSize < 1) {
+      throw new BadRequestException(
+        'Both page and pageSize must be bigger than 0.',
+      );
+    } else if (page !== undefined && pageSize !== undefined) {
+      return this.spaceshipsService.findWithPagination(page, pageSize);
+    } else {
+      return this.spaceshipsService.findAll();
+    }
   }
 
   @Query(() => Spaceship, { name: 'spaceship' })

@@ -20,6 +20,19 @@ export class SpaceshipsService {
     return this.spaceshipRepository.find();
   }
 
+  async findWithPagination(
+    page: number,
+    pageSize: number,
+  ): Promise<Spaceship[]> {
+    const offset = (page - 1) * pageSize;
+    const limit = pageSize;
+
+    return this.spaceshipRepository.find({
+      skip: offset,
+      take: limit,
+    });
+  }
+
   async findOne(id: number): Promise<Spaceship> {
     return this.spaceshipRepository.findOneBy({ id });
   }
