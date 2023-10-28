@@ -12,7 +12,7 @@ export class SpaceshipsService {
     private spaceshipRepository: Repository<Spaceship>,
   ) {}
 
-  async create(createSpaceshipInput: CreateSpaceshipInput) {
+  async create(createSpaceshipInput: CreateSpaceshipInput): Promise<Spaceship> {
     return this.spaceshipRepository.save(createSpaceshipInput);
   }
 
@@ -38,7 +38,7 @@ export class SpaceshipsService {
     return this.spaceshipRepository.save(spaceship);
   }
 
-  async remove(id: number) {
+  async remove(id: number): Promise<Spaceship> {
     const spaceship = await this.spaceshipRepository.findOneBy({ id });
 
     if (!spaceship) {
