@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Spaceship {
+  id: Int!
+  crewSize: Int!
+  maxSpeed: Int!
+  range: Int!
+  cargoCapacity: Int!
+  cost: Int!
+  weight: Int!
+  batteryCapacity: Int!
+}
+
+type Query {
+  spaceships: [Spaceship!]!
+  spaceship(id: Int!): Spaceship!
+}
+
+type Mutation {
+  createSpaceship(createSpaceshipInput: CreateSpaceshipInput!): Spaceship!
+  updateSpaceship(updateSpaceshipInput: UpdateSpaceshipInput!): Spaceship!
+  removeSpaceship(id: Int!): Spaceship!
+}
+
+input CreateSpaceshipInput {
+  crewSize: Int!
+  maxSpeed: Int!
+  range: Int!
+  cargoCapacity: Int!
+  cost: Int!
+  weight: Int!
+  batteryCapacity: Int!
+}
+
+input UpdateSpaceshipInput {
+  crewSize: Int
+  maxSpeed: Int
+  range: Int
+  cargoCapacity: Int
+  cost: Int
+  weight: Int
+  batteryCapacity: Int
+  id: Int!
+}
