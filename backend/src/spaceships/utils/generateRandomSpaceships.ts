@@ -17,6 +17,13 @@ export const generateRandomSpaceship = (id: number): Spaceship => {
   };
 };
 
+export const generateRandomSpaceshipWithoutId = (): Omit<Spaceship, 'id'> => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { id: _, ...spaceshipWithoutId } = generateRandomSpaceship(1);
+
+  return spaceshipWithoutId;
+};
+
 export const generateRandomSpaceships = (count: number): Spaceship[] => {
   const spaceships: Spaceship[] = [];
   for (let i = 1; i <= count; i++) {

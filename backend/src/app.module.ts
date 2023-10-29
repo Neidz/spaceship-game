@@ -6,7 +6,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SpaceshipsModule } from './spaceships/spaceships.module';
-import { dataSourceOptions } from 'db/data-source';
+import { dataSourceOptions } from '../db/data-source';
 
 @Module({
   imports: [

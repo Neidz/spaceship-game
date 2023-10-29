@@ -1,4 +1,15 @@
-import { generateRandomSpaceships } from './generateRandomSpaceships';
+import {
+  generateRandomSpaceshipWithoutId,
+  generateRandomSpaceships,
+} from './generateRandomSpaceships';
+
+describe('generateRandomSpaceshipWithoutId', () => {
+  it('should return a spaceship without the "id" property', () => {
+    const spaceshipWithoutId = generateRandomSpaceshipWithoutId();
+
+    expect(spaceshipWithoutId).not.toHaveProperty('id');
+  });
+});
 
 describe('GenerateRandomSpaceships', () => {
   it('should generate an array of spaceships with the specified count', () => {
