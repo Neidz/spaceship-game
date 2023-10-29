@@ -4,6 +4,7 @@ import { UpdateSpaceshipInput } from './dto/update-spaceship.input';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Spaceship } from './entities/spaceship.entity';
 import { Repository } from 'typeorm';
+import { generateRandomSpaceships } from './utils/generateRandomSpaceships';
 
 @Injectable()
 export class SpaceshipsService {
@@ -65,5 +66,17 @@ export class SpaceshipsService {
     }
 
     return this.spaceshipRepository.remove(spaceship);
+  }
+
+  // Not really a part of the project, so no tests for this one. It's just something to make showcase of the project
+  // easier without the need to do this manually. Actual seeding in real product obviously would be implemented differently
+  async seedData() {
+    const spaceshipsInDb = await this.findAll();
+
+    if (spaceshipsInDb.length === 0) {
+      const spaceships = generateRandomSpaceships(100);
+
+      this.spaceshipRepository.save(spaceships);
+    }
   }
 }

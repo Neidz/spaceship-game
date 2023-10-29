@@ -4,9 +4,23 @@ const getRandomInt = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+const spaceshipNames = [
+  'Stellar Voyager',
+  'Galactic Guardian',
+  'Cosmic Explorer',
+  'Nebula Nomad',
+  'Astronomic Arrow',
+  'Starship Serenity',
+  'Celestial Cruiser',
+  'Orbital Odyssey',
+  'Interstellar Intruder',
+  'Cosmos Voyager',
+];
+
 export const generateRandomSpaceship = (id: number): Spaceship => {
   return {
     id,
+    name: spaceshipNames[Math.floor(Math.random() * spaceshipNames.length)],
     crewSize: getRandomInt(5, 50),
     maxSpeed: getRandomInt(1000, 30000),
     range: getRandomInt(5000, 300000),

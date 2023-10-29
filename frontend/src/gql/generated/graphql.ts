@@ -22,6 +22,7 @@ export type CreateSpaceshipInput = {
   cost: Scalars['Int']['input'];
   crewSize: Scalars['Int']['input'];
   maxSpeed: Scalars['Int']['input'];
+  name: Scalars['String']['input'];
   range: Scalars['Int']['input'];
   weight: Scalars['Int']['input'];
 };
@@ -73,6 +74,7 @@ export type Spaceship = {
   crewSize: Scalars['Int']['output'];
   id: Scalars['Int']['output'];
   maxSpeed: Scalars['Int']['output'];
+  name: Scalars['String']['output'];
   range: Scalars['Int']['output'];
   weight: Scalars['Int']['output'];
 };
@@ -84,6 +86,7 @@ export type UpdateSpaceshipInput = {
   crewSize?: InputMaybe<Scalars['Int']['input']>;
   id: Scalars['Int']['input'];
   maxSpeed?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
   range?: InputMaybe<Scalars['Int']['input']>;
   weight?: InputMaybe<Scalars['Int']['input']>;
 };

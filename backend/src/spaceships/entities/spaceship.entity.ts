@@ -8,6 +8,10 @@ export class Spaceship {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Field(() => String)
+  @Column()
+  name: string;
+
   @Field(() => Int)
   @Column()
   crewSize: number;

@@ -25,6 +25,7 @@ describe('GenerateRandomSpaceships', () => {
 
     spaceships.forEach((spaceship) => {
       expect(spaceship).toHaveProperty('id');
+      expect(spaceship).toHaveProperty('name');
       expect(spaceship).toHaveProperty('crewSize');
       expect(spaceship).toHaveProperty('maxSpeed');
       expect(spaceship).toHaveProperty('range');

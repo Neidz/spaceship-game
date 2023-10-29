@@ -4,6 +4,7 @@
 
 type Spaceship {
   id: Int!
+  name: String!
   crewSize: Int!
   maxSpeed: Int!
   range: Int!
@@ -25,6 +26,7 @@ type Mutation {
 }
 
 input CreateSpaceshipInput {
+  name: String!
   crewSize: Int!
   maxSpeed: Int!
   range: Int!
@@ -35,6 +37,7 @@ input CreateSpaceshipInput {
 }
 
 input UpdateSpaceshipInput {
+  name: String
   crewSize: Int
   maxSpeed: Int
   range: Int
