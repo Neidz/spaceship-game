@@ -65,7 +65,15 @@ describe('SpaceshipsService', () => {
 
   it("shouldn't find a spaceship by ID that doesn't exist", async () => {
     const id = 570;
-    const spaceship = await service.findOne(id);
+    let spaceship: Spaceship;
+
+    expect(spaceship).toBeUndefined();
+
+    try {
+      spaceship = await service.findOne(id);
+    } catch (e) {
+      expect(e).toBeInstanceOf(NotFoundException);
+    }
 
     expect(spaceship).toBeUndefined();
   });

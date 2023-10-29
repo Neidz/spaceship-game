@@ -34,7 +34,13 @@ export class SpaceshipsService {
   }
 
   async findOne(id: number): Promise<Spaceship> {
-    return this.spaceshipRepository.findOneBy({ id });
+    const spaceship = this.spaceshipRepository.findOneBy({ id });
+
+    if (!spaceship) {
+      throw new NotFoundException(`Spaceship with id ${id} not found`);
+    }
+
+    return spaceship;
   }
 
   async update(

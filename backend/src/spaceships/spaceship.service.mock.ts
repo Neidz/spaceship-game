@@ -27,10 +27,15 @@ class MockSpaceshipsService {
     return Promise.resolve(mockSpaceships.slice(offset, offset + limit));
   });
 
-  findOne = jest.fn(
-    (id: number) =>
-      Promise.resolve(mockSpaceships.find((el) => el.id === id)) ?? null,
-  );
+  findOne = jest.fn((id: number) => {
+    const spaceship = mockSpaceships.find((el) => el.id === id);
+
+    if (!spaceship) {
+      throw new NotFoundException(`Spaceship with id ${id} not found`);
+    }
+
+    return Promise.resolve(spaceship);
+  });
 
   update = jest.fn((id: number, updateSpaceshipInput: UpdateSpaceshipInput) => {
     const index = mockSpaceships.findIndex((el) => el.id === id);

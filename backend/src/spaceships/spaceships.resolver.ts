@@ -9,7 +9,7 @@ import { BadRequestException } from '@nestjs/common';
 export class SpaceshipsResolver {
   constructor(private readonly spaceshipsService: SpaceshipsService) {}
 
-  @Mutation(() => Spaceship)
+  @Mutation(() => Spaceship, { name: 'createSpaceship' })
   createSpaceship(
     @Args('createSpaceshipInput') createSpaceshipInput: CreateSpaceshipInput,
   ) {
@@ -44,7 +44,7 @@ export class SpaceshipsResolver {
     return this.spaceshipsService.findOne(id);
   }
 
-  @Mutation(() => Spaceship)
+  @Mutation(() => Spaceship, { name: 'updateSpaceship' })
   updateSpaceship(
     @Args('updateSpaceshipInput') updateSpaceshipInput: UpdateSpaceshipInput,
   ) {
@@ -54,7 +54,7 @@ export class SpaceshipsResolver {
     );
   }
 
-  @Mutation(() => Spaceship)
+  @Mutation(() => Spaceship, { name: 'removeSpaceship' })
   removeSpaceship(@Args('id', { type: () => Int }) id: number) {
     return this.spaceshipsService.remove(id);
   }
