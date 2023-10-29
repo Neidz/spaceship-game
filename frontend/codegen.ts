@@ -9,6 +9,9 @@ const config: CodegenConfig = {
         "src/gql/generated/": {
             preset: "client",
             plugins: [],
+            presetConfig: {
+                gqlTagName: "gql",
+            },
         },
     },
 };

@@ -21,41 +21,41 @@ const documents = {
 };
 
 /**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  *
  *
  * @example
  * ```ts
- * const query = graphql(`query GetUser($id: ID!) { user(id: $id) { name } }`);
+ * const query = gql(`query GetUser($id: ID!) { user(id: $id) { name } }`);
  * ```
  *
  * The query argument is unknown!
  * Please regenerate the types.
  */
-export function graphql(source: string): unknown;
+export function gql(source: string): unknown;
 
 /**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    mutation CreateSpaceship($createSpaceshipInput: CreateSpaceshipInput!) {\n        createSpaceship(createSpaceshipInput: $createSpaceshipInput) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    mutation CreateSpaceship($createSpaceshipInput: CreateSpaceshipInput!) {\n        createSpaceship(createSpaceshipInput: $createSpaceshipInput) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
+export function gql(source: "\n    mutation CreateSpaceship($createSpaceshipInput: CreateSpaceshipInput!) {\n        createSpaceship(createSpaceshipInput: $createSpaceshipInput) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    mutation CreateSpaceship($createSpaceshipInput: CreateSpaceshipInput!) {\n        createSpaceship(createSpaceshipInput: $createSpaceshipInput) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
 /**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    mutation RemoveSpaceship($id: Int!) {\n        removeSpaceship(id: $id) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    mutation RemoveSpaceship($id: Int!) {\n        removeSpaceship(id: $id) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
+export function gql(source: "\n    mutation RemoveSpaceship($id: Int!) {\n        removeSpaceship(id: $id) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    mutation RemoveSpaceship($id: Int!) {\n        removeSpaceship(id: $id) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
 /**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    mutation UpdateSpaceship($updateSpaceshipInput: UpdateSpaceshipInput!) {\n        updateSpaceship(updateSpaceshipInput: $updateSpaceshipInput) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    mutation UpdateSpaceship($updateSpaceshipInput: UpdateSpaceshipInput!) {\n        updateSpaceship(updateSpaceshipInput: $updateSpaceshipInput) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
+export function gql(source: "\n    mutation UpdateSpaceship($updateSpaceshipInput: UpdateSpaceshipInput!) {\n        updateSpaceship(updateSpaceshipInput: $updateSpaceshipInput) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    mutation UpdateSpaceship($updateSpaceshipInput: UpdateSpaceshipInput!) {\n        updateSpaceship(updateSpaceshipInput: $updateSpaceshipInput) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
 /**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query GetSpaceshipById($id: Int!) {\n        spaceship(id: $id) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    query GetSpaceshipById($id: Int!) {\n        spaceship(id: $id) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
+export function gql(source: "\n    query GetSpaceshipById($id: Int!) {\n        spaceship(id: $id) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    query GetSpaceshipById($id: Int!) {\n        spaceship(id: $id) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
 /**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query GetSpaceships($page: Int, $pageSize: Int) {\n        spaceships(page: $page, pageSize: $pageSize) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    query GetSpaceships($page: Int, $pageSize: Int) {\n        spaceships(page: $page, pageSize: $pageSize) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
+export function gql(source: "\n    query GetSpaceships($page: Int, $pageSize: Int) {\n        spaceships(page: $page, pageSize: $pageSize) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"): (typeof documents)["\n    query GetSpaceships($page: Int, $pageSize: Int) {\n        spaceships(page: $page, pageSize: $pageSize) {\n            id\n            crewSize\n            maxSpeed\n            range\n            cargoCapacity\n            cost\n            weight\n            batteryCapacity\n        }\n    }\n"];
 
-export function graphql(source: string) {
+export function gql(source: string) {
   return (documents as any)[source] ?? {};
 }
 

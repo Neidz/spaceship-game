@@ -1,6 +1,6 @@
-import { gql } from "graphql-tag";
+import { gql } from "../generated";
 
-export const UPDATE_SPACESHIP = gql`
+export const UPDATE_SPACESHIP = gql(`
     mutation UpdateSpaceship($updateSpaceshipInput: UpdateSpaceshipInput!) {
         updateSpaceship(updateSpaceshipInput: $updateSpaceshipInput) {
             id
@@ -13,4 +13,4 @@ export const UPDATE_SPACESHIP = gql`
             batteryCapacity
         }
     }
-`;
+`);

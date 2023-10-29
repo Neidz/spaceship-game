@@ -1,6 +1,6 @@
-import { gql } from "graphql-tag";
+import { gql } from "../generated";
 
-export const GET_SPACESHIP_BY_ID = gql`
+export const GET_SPACESHIP_BY_ID = gql(`
     query GetSpaceshipById($id: Int!) {
         spaceship(id: $id) {
             id
@@ -13,4 +13,4 @@ export const GET_SPACESHIP_BY_ID = gql`
             batteryCapacity
         }
     }
-`;
+`);

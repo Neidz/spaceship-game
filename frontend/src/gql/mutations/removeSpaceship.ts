@@ -1,6 +1,6 @@
-import { gql } from "graphql-tag";
+import { gql } from "../generated";
 
-export const REMOVE_SPACESHIP = gql`
+export const REMOVE_SPACESHIP = gql(`
     mutation RemoveSpaceship($id: Int!) {
         removeSpaceship(id: $id) {
             id
@@ -13,4 +13,4 @@ export const REMOVE_SPACESHIP = gql`
             batteryCapacity
         }
     }
-`;
+`);
