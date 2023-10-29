@@ -4,6 +4,7 @@ export const UPDATE_SPACESHIP = gql(`
     mutation UpdateSpaceship($updateSpaceshipInput: UpdateSpaceshipInput!) {
         updateSpaceship(updateSpaceshipInput: $updateSpaceshipInput) {
             id
+            name
             crewSize
             maxSpeed
             range

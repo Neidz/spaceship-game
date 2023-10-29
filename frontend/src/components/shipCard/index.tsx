@@ -27,7 +27,7 @@ export const ShipCard: FC<Props> = ({ spaceship }) => {
             <RocketIcon sx={{ height: "5rem", width: "5rem", alignSelf: "center" }} />
             <CardContent sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 <Typography variant="h5" gutterBottom sx={{ textAlign: "center" }}>
-                    Name
+                    {spaceship.name}
                 </Typography>
                 {properties.map((property) => (
                     <Typography
