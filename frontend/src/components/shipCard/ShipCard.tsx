@@ -28,6 +28,7 @@ export const ShipCard: FC<Props> = ({ spaceship, state = STATE.NEUTRAL, highligh
     const properties: Property[] = [
         { name: "batteryCapacity", text: "Battery capacity", value: spaceship.batteryCapacity },
         { name: "cargoCapacity", text: "Cargo capacity", value: spaceship.cargoCapacity },
+        { name: "cost", text: "Cost", value: spaceship.cost },
         { name: "crewSize", text: "Crew size", value: spaceship.crewSize },
         { name: "maxSpeed", text: "Max speed", value: spaceship.maxSpeed },
         { name: "range", text: "Range", value: spaceship.range },

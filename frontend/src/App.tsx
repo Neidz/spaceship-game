@@ -4,9 +4,9 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./App.css";
 import { Box } from "@mui/material";
-import { ShipCard } from "./components/shipCard";
 import { useQuery } from "@apollo/client";
 import { GET_SPACESHIPS } from "./gql/queries/getSpaceships";
+import { ShipCard } from "./components/shipCard";
 
 function App() {
     const { data, error, loading } = useQuery(GET_SPACESHIPS);
