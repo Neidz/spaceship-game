@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, useTheme } from "@mui/material";
+import { Box, Card, CardContent, Typography, useTheme } from "@mui/material";
 import { FC } from "react";
 import { Spaceship } from "../../gql/generated/graphql";
 import RocketIcon from "@mui/icons-material/Rocket";
@@ -36,17 +36,28 @@ export const ShipCard: FC<Props> = ({ spaceship, state = STATE.NEUTRAL, highligh
     ];
 
     return (
-        <Card sx={{ padding: "1rem", display: "flex", flexDirection: "column", backgroundColor: backgroundColor }}>
-            <RocketIcon sx={{ height: "5rem", width: "5rem", alignSelf: "center" }} />
-            <CardContent sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <Card
+            sx={{
+                padding: "0.5rem 0",
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: backgroundColor,
+            }}
+        >
+            <RocketIcon sx={{ height: "3rem", width: "3rem", alignSelf: "center" }} />
+            <CardContent sx={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <Typography variant="h5" gutterBottom sx={{ textAlign: "center" }}>
                     {spaceship.name}
                 </Typography>
                 {properties.map((property) => (
-                    <Typography
-                        key={property.text}
-                        color={property.name === highlightedProperty ? "text.primary" : "text.secondary"}
-                    >{`${property.text}: ${property.value}`}</Typography>
+                    <Box key={property.text}>
+                        <Typography color={property.name === highlightedProperty ? "text.primary" : "text.secondary"}>
+                            {property.text}
+                        </Typography>
+                        <Typography color={property.name === highlightedProperty ? "text.primary" : "text.secondary"}>
+                            {property.value}
+                        </Typography>
+                    </Box>
                 ))}
             </CardContent>
         </Card>
