@@ -1,25 +1,14 @@
 import { render } from "@testing-library/react";
 import { ShipCard } from "./ShipCard";
+import { mockedSpaceship } from "../../test/mockedSpaceship";
 
 describe("ShipCard Component", () => {
-    const sampleSpaceship = {
-        id: 1,
-        name: "Nebula Nomad",
-        crewSize: 46,
-        maxSpeed: 10809,
-        range: 199600,
-        cargoCapacity: 737,
-        cost: 55405794,
-        weight: 24125043,
-        batteryCapacity: 1256868,
-    };
-
     it("renders the ShipCard component with provided spaceship data", () => {
-        const { container } = render(<ShipCard spaceship={sampleSpaceship} />);
+        const { container } = render(<ShipCard spaceship={mockedSpaceship} />);
 
-        Object.keys(sampleSpaceship).forEach((key) => {
+        Object.keys(mockedSpaceship).forEach((key) => {
             if (key !== "id") {
-                expect(container.textContent).toContain(sampleSpaceship[key as keyof typeof sampleSpaceship].toString());
+                expect(container.textContent).toContain(mockedSpaceship[key as keyof typeof mockedSpaceship].toString());
             }
         });
     });
